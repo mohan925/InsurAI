@@ -10,11 +10,33 @@ function Login() {
   if (showSignup) {
     return <Signup goToLogin={() => setShowSignup(false)} />;
   }
-
-  const handleSubmit = (e) => {
+  var user;
+  if(loginInput.indexOf('@')==-1){
+        user={"username":loginInput,"password": password}
+  }
+  else{
+     user={"email":loginInput,"password": password}
+  }
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    alert(`Login attempted with username/email: ${loginInput}`);
-  };
+    
+    try{
+          const res = await fetch("http://localhost:8080/api/users/login", {
+            method: "POST",
+            headers: {  
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(user),
+          });
+          console.log(user);
+          if(res.ok){
+            console.log("Login successful!");
+          }
+        }
+      catch(e){
+        console.log(e);
+      }
+    };
 
   return (
     <div className="login-container">
@@ -28,7 +50,6 @@ function Login() {
           onChange={(e) => setLoginInput(e.target.value)}
           required
         />
-
         <label>Password</label>
         <input
           type="password"
