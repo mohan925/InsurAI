@@ -1,0 +1,23 @@
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background: #f7faff;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-main {
+  margin-left: 250px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.dashboard-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 30px 40px;
+  height: calc(100vh - 70px);
+  background: #f7faff;
+}

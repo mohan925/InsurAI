@@ -1,11 +1,16 @@
 import React from "react";
-import HomePage from "./LOGIN/HomePage"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./LOGIN/HomePage";
+import UserDashboard from "./UserDash/UserDashboard"; 
 
 function App() {
   return (
-    <div>
-      <HomePage />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/dashboard" element={<UserDashboard />} />
+      </Routes>
+    </Router>
   );
 }
 

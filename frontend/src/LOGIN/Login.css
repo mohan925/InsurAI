@@ -64,3 +64,38 @@ button:hover {
   color: #007bff;
   cursor: pointer;
 }
+.error-text {
+  color: #e63946;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.success-text {
+  color: #2a9d8f;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+.error-text {
+  color: #e63946;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.success-text {
+  color: #2a9d8f;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+.error-text {
+  color: #e11d48;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  text-align: left;
+}
+
+.success-text {
+  color: #16a34a;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  text-align: center;
+}

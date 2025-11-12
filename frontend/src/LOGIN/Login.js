@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import Signup from "./Signup";
 
@@ -6,37 +7,41 @@ function Login() {
   const [showSignup, setShowSignup] = useState(false);
   const [loginInput, setLoginInput] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
+  const navigate = useNavigate();
 
   if (showSignup) {
     return <Signup goToLogin={() => setShowSignup(false)} />;
   }
-  var user;
-  if(loginInput.indexOf('@')==-1){
-        user={"username":loginInput,"password": password}
-  }
-  else{
-     user={"email":loginInput,"password": password}
-  }
-  const handleSubmit = async(e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    try{
-          const res = await fetch("http://localhost:8080/api/users/login", {
-            method: "POST",
-            headers: {  
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(user),
-          });
-          console.log(user);
-          if(res.ok){
-            console.log("Login successful!");
-          }
-        }
-      catch(e){
-        console.log(e);
+    setErrorMsg("");
+
+    const isEmail = loginInput.includes("@");
+    const payload = isEmail
+      ? { email: loginInput, password }
+      : { username: loginInput, password };
+
+    try {
+      const res = await fetch("http://localhost:8080/api/users/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json().catch(() => null);
+
+      if (data && data.username) {
+        navigate("/dashboard", { state: { user: data } });
+      } else {
+        setErrorMsg("Invalid username/email or password!");
       }
-    };
+    } catch (error) {
+      console.error("Login error:", error);
+      setErrorMsg("Something went wrong. Try again.");
+    }
+  };
 
   return (
     <div className="login-container">
@@ -50,6 +55,7 @@ function Login() {
           onChange={(e) => setLoginInput(e.target.value)}
           required
         />
+
         <label>Password</label>
         <input
           type="password"
@@ -60,6 +66,8 @@ function Login() {
         />
 
         <button type="submit">Login</button>
+
+        {errorMsg && <p className="error-text">{errorMsg}</p>}
 
         <p className="signup-link">
           New user? <span onClick={() => setShowSignup(true)}>Register here</span>
