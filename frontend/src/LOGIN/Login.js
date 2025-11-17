@@ -32,9 +32,13 @@ function Login() {
 
       const data = await res.json().catch(() => null);
 
-      if (data && data.username) {
-        navigate("/dashboard", { state: { user: data } });
-      } else {
+      if (data && data.username && data.role==="User") {
+        navigate("/user", { state: { user: data } });
+      }
+      if(data && data.username && data.role==="Admin"){
+        navigate("/admin", { state: { user: data } });
+      }
+      else {
         setErrorMsg("Invalid username/email or password!");
       }
     } catch (error) {

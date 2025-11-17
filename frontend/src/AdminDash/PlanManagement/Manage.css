@@ -1,0 +1,35 @@
+.manage-container {
+  padding: 20px;
+}
+
+.manage-container h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #2b5876;
+}
+
+.manage-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.manage-tabs button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #e8f0fc;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.manage-tabs button.active {
+  background: #2b5876;
+  color: white;
+}
+
+.manage-content {
+  margin-top: 15px;
+}

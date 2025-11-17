@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Dash.css";
+import "./Profile.css";
 
 function Profile({ user }) {
   const [showModal, setShowModal] = useState(false);
@@ -39,6 +39,7 @@ function Profile({ user }) {
       <div className="profile-card">
         <p><strong>Username:</strong> {user.username}</p>
         <p><strong>Email:</strong> {user.email}</p>
+        <p><strong>Role:</strong> {user.role}</p>
         <div className="profile-password">
           <strong>Password:</strong>
           <input

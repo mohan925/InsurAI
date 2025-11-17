@@ -5,11 +5,11 @@ body {
   background: #f4f6f9;
 }
 
-.login-container {
-  width: 350px;
+.signup-wrapper {
+  width: 380px;
   margin: 0 auto;
   background: #ffffff;
-  padding: 25px 30px;
+  padding: 30px 35px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: absolute;
@@ -20,7 +20,7 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.login-container:hover {
+.signup-wrapper:hover {
   transform: translate(-50%, -52%);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
@@ -36,25 +36,26 @@ body {
   }
 }
 
-h2 {
+.signup-card h2 {
   color: #0056b3;
-  margin-bottom: 20px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.login-form {
+.signup-form {
   display: flex;
   flex-direction: column;
   color: #333;
 }
 
-.login-form label {
+.signup-form label {
   font-weight: 600;
   margin-top: 10px;
   text-align: left;
 }
 
-.login-form input {
+.signup-form input,
+.signup-form select {
   margin-top: 6px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -62,10 +63,16 @@ h2 {
   transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-.login-form input:focus {
+.signup-form input:focus,
+.signup-form select:focus {
   border-color: #007bff;
   box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
   outline: none;
+}
+
+.signup-form select {
+  cursor: pointer;
+  background-color: #fff;
 }
 
 button {
@@ -85,32 +92,34 @@ button:hover {
   transform: scale(1.03);
 }
 
-.signup-link {
-  margin-top: 15px;
+.success-text {
+  color: #16a34a;
+  font-size: 0.9rem;
+  margin-top: 6px;
   text-align: center;
-  color: #333;
-  font-size: 0.95rem;
-}
-
-.signup-link span {
-  color: #007bff;
-  cursor: pointer;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.signup-link span:hover {
-  color: #0056b3;
 }
 
 .error-text {
   color: #e11d48;
   font-size: 0.9rem;
   margin-top: 6px;
+  text-align: left;
 }
 
-.success-text {
-  color: #16a34a;
-  font-size: 0.9rem;
-  margin-top: 6px;
+.login-link {
+  margin-top: 15px;
+  text-align: center;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.login-link span {
+  color: #007bff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.login-link span:hover {
+  color: #0056b3;
 }

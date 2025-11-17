@@ -1,38 +1,39 @@
 import React, { useState } from "react";
-import "./Login.css";
+import "./Signup.css";
 
 function Signup({ goToLogin }) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMsg, setErrorMsg] = useState(""); 
+  const [role, setRole] = useState("User");
+  const [errorMsg, setErrorMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMsg("");
     setSuccessMsg("");
-
+    console.log("Submitting signup with:", { username, email, password, role });
     try {
       const res = await fetch("http://localhost:8080/api/users/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          username: username,
-          email: email,
-          password: password,
+          username,
+          email,
+          password,
+          role,
         }),
       });
-
+      
       const message = await res.text();
-
       if (message === "Signup successful!") {
         setSuccessMsg("Signup successful! Please login.");
         setUsername("");
         setEmail("");
         setPassword("");
       } else {
-        setErrorMsg(message); 
+        setErrorMsg(message);
       }
     } catch (error) {
       setErrorMsg("Something went wrong. Please try again.");
@@ -41,51 +42,54 @@ function Signup({ goToLogin }) {
   };
 
   return (
-    <div className="login-container">
-      <h2>Register</h2>
-      <form onSubmit={handleSubmit} className="login-form">
-        <label>Username</label>
-        <input
-          type="text"
-          placeholder="Choose a username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-        {errorMsg.includes("Username") && (
-          <p className="error-text">{errorMsg}</p>
-        )}
+    <div className="signup-wrapper">
+      <div className="signup-card">
+        <h2>Create Your Account</h2>
+        <form onSubmit={handleSubmit} className="signup-form">
+          <label>Username</label>
+          <input
+            type="text"
+            placeholder="Choose a username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
 
-        <label>Email</label>
-        <input
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        {errorMsg.includes("Email") && <p className="error-text">{errorMsg}</p>}
+          <label>Email</label>
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-        <label>Password</label>
-        <input
-          type="password"
-          placeholder="Create a password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+          <label>Password</label>
+          <input
+            type="password"
+            placeholder="Create a password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
 
-        <button type="submit">Sign Up</button>
+          <label>Role</label>
+          <select value={role} onChange={(e) => setRole(e.target.value)} required>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+            <option value="agent">Agent</option>
+          </select>
 
-        {successMsg && <p className="success-text">{successMsg}</p>}
-        {errorMsg && !errorMsg.includes("Username") && !errorMsg.includes("Email") && (
-          <p className="error-text">{errorMsg}</p>
-        )}
+          <button type="submit">Sign Up</button>
 
-        <p className="signup-link">
-          Already have an account? <span onClick={goToLogin}>Login here</span>
-        </p>
-      </form>
+          {successMsg && <p className="success-text">{successMsg}</p>}
+          {errorMsg && <p className="error-text">{errorMsg}</p>}
+
+          <p className="login-link">
+            Already have an account? <span onClick={goToLogin}>Login here</span>
+          </p>
+        </form>
+      </div>
     </div>
   );
 }

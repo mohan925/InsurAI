@@ -1,0 +1,59 @@
+.add-plan-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: linear-gradient(145deg, #ffffff, #f1f7ff);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.add-plan-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #2b5876;
+}
+
+.add-plan-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.add-plan-form input,
+.add-plan-form textarea {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 2px solid #d8e4f5;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.add-plan-form input:focus,
+.add-plan-form textarea:focus {
+  border-color: #2b8dd6;
+  box-shadow: 0 0 6px rgba(43, 141, 214, 0.4);
+}
+
+.add-plan-form textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+.add-plan-form button {
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2b5876, #4e92df);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-plan-form button:hover {
+  background: linear-gradient(135deg, #4e92df, #2b5876);
+  transform: scale(1.02);
+}

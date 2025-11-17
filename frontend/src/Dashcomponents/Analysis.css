@@ -1,0 +1,61 @@
+/* Wrapper */
+.stats-container {
+  display: flex;
+  gap: 45px;            /* Increased spacing between cards */
+  padding: 35px 40px;   /* More outer spacing */
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* Card */
+.stat-card {
+  width: 300px;         /* Slightly bigger card */
+  padding: 32px;
+  background: linear-gradient(145deg, #ffffff, #eef3f8);
+  border-radius: 18px;
+  border: 1px solid #d8e1ef;
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.06),
+    0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left Blue Accent Bar */
+.stat-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 8px;
+  height: 100%;
+  background: linear-gradient(180deg, #1e3c72, #2a5298);
+  border-radius: 8px;
+}
+
+/* Hover Effect */
+.stat-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.12),
+    0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+.stat-card h3 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 600;
+  color: #1e3c72;
+  letter-spacing: 0.4px;
+}
+
+/* Number */
+.stat-card p {
+  margin-top: 18px;
+  font-size: 42px;
+  font-weight: 700;
+  color: #0d1b33;
+  letter-spacing: 1px;
+}
