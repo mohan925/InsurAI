@@ -28,8 +28,8 @@ function ManagePlans() {
 
       {/* Tab Content */}
       <div className="manage-content">
-        {tab === "add" && <AddPlan />}
-        {tab === "view" && <ViewPlans />}
+        {tab === "add" && <AddPlan/>}
+        {tab === "view" && <ViewPlans/>}
       </div>
     </div>
   );
