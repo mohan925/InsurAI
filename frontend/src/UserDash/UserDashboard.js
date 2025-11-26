@@ -6,6 +6,7 @@ import Topbar from "../Dashcomponents/Topbar";
 import PlansList from "../Dashcomponents/PlansList";
 import Profile from "../Dashcomponents/Profile";
 import UserPlans from "./UserPlans";
+import Appointment from "./Appointment";
 import Support from "./Support"
 
 function Dashboard() {
@@ -23,8 +24,9 @@ function Dashboard() {
           {activeSection === "plans" && <PlansList />}
           {activeSection === "profile" && <Profile user={user} />}
           {activeSection === "support" && <Support/>}
-        </div>
+          {activeSection === "appointment" && <Appointment user={user}/>}
       </div>
+    </div>
     </div>
   );
 }

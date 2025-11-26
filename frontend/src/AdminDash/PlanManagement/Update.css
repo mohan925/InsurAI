@@ -1,0 +1,76 @@
+.update-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.update-card {
+  width: 450px;
+  background: white;
+  padding: 25px 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  animation: fadeIn 0.4s ease;
+}
+
+.update-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 500;
+  color: #334155;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1.5px solid #cbd5e1;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px rgba(59, 130, 246, 0.4);
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+.update-btn {
+  width: 100%;
+  margin-top: 18px;
+  background: #2563eb;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.update-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

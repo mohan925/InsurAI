@@ -75,9 +75,9 @@ function Signup({ goToLogin }) {
 
           <label>Role</label>
           <select value={role} onChange={(e) => setRole(e.target.value)} required>
-            <option value="user">User</option>
-            <option value="admin">Admin</option>
-            <option value="agent">Agent</option>
+            <option value="User">User</option>
+            <option value="Admin">Admin</option>
+            <option value="Agent">Agent</option>
           </select>
 
           <button type="submit">Sign Up</button>

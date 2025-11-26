@@ -21,6 +21,7 @@ function Sidebar({ setActiveSection, activeSection, role }) {
     { id: "dashboard", label: "Dashboard", icon: <FaThLarge /> },
     { id: "plans", label: "My Plans", icon: <FaLeaf /> },
     { id: "profile", label: "Profile", icon: <FaUserCircle /> },
+    { id: "appointment", label: "Book Appointment", icon: <FaUserCircle /> },
     { id: "support", label: "Support", icon: <FaHeadset /> },
   ];
 

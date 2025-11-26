@@ -46,6 +46,7 @@ function PlansList() {
                   aria-label={isExpanded ? "Collapse details" : "Expand details"}
                 >
                   {isExpanded ? <FaChevronUp /> : <FaChevronDown />}
+                  {/* <div>Buy</div> */}
                 </button>
               </div>
 
@@ -68,6 +69,7 @@ function PlansList() {
                   <p>
                     <FaClock className="icon" /> <b>Duration:</b> {plan.duration}
                   </p>
+                  
                 </div>
               </div>
 
@@ -85,6 +87,9 @@ function PlansList() {
                   </p>
                   <p>
                     <strong>Created Date:</strong> {plan.createDate}
+                  </p>
+                  <p>
+                    <button>Buy Insurance</button>
                   </p>
                 </div>
               )}
