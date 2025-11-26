@@ -10,7 +10,7 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false,unique = true)
     private String username;
 
     @Column(nullable = false, unique = true)
@@ -18,20 +18,30 @@ public class UserEntity {
 
     @Column(nullable = false)
     private String password;
+    
+    @Column(nullable=false)
+    private String role;
 
     public UserEntity() {
         super();
     }
 
-    public UserEntity(Long id, String username, String email, String password) {
+    public UserEntity(Long id, String username, String email, String password,String Role) {
         super();
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
+        this.role=Role;
     }
 
-    // Getters and setters
+    public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
