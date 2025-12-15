@@ -1,0 +1,53 @@
+/* Sidebar Container */
+.sidebar {
+  width: 230px;
+  height: 100vh;
+  background-color: #1e1e2f;   /* SAME COLOR */
+  color: #fff;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3); /* smooth shadow */
+}
+
+
+.sidebar h2 {
+  font-size: 22px;
+  margin-bottom: 35px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;;
+}
+
+/* List Styles */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Menu Items */
+.sidebar ul li {
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;          /* rounded */
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.25s ease;
+}
+
+/* Hover Effect */
+.sidebar ul li:hover {
+  background-color: #29293d;   /* SLIGHTLY lighter shade (same tone) */
+  transform: translateX(5px);  /* small motion */
+}
+
+/* Active Tab */
+.sidebar ul li.active {
+  background-color: #007bff;  /* Same BLUE ACCENT used in your UI */
+  color: #fff;
+  font-weight: 600;
+  transform: translateX(5px);
+  box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.5);
+}
