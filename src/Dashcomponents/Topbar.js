@@ -8,7 +8,7 @@ function Topbar({ user, setActiveSection }) {
    console.log(user);
   return (
     <header className="topbar">
-      <h1 className="topbar-title">Dashboard</h1>
+      <h1 className="topbar-title">User Dashboard</h1>
       <div className="topbar-actions">
         <div
           className="user-icon-wrapper"
@@ -18,7 +18,7 @@ function Topbar({ user, setActiveSection }) {
           {user?.avatarUrl ? (
             <img src={user.avatarUrl} alt="Profile" className="user-icon-img" />
           ) : (
-            <span className="user-icon-text">{user?.username?.charAt(0).toUpperCase() || ""}</span>
+            <span className="user-icon-text">{user?.username?.charAt(0).toUpperCase() || "U"}</span>
           )}
         </div>
         <button

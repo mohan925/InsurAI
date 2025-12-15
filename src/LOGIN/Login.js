@@ -35,11 +35,8 @@ function Login() {
       if (data && data.username && data.role==="User") {
         navigate("/user", { state: { user: data } });
       }
-      else if(data && data.username && data.role==="Admin"){
+      if(data && data.username && data.role==="Admin"){
         navigate("/admin", { state: { user: data } });
-      }
-      else if(data && data.username && data.role==="Agent"){
-        navigate("/agent", { state: { user: data } });
       }
       else {
         setErrorMsg("Invalid username/email or password!");
