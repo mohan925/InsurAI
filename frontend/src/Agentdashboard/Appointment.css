@@ -1,0 +1,49 @@
+/* Wrapper */
+.agent-appointments-wrapper {
+  width: 80%;
+  margin: 30px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Title */
+.appointments-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.loading, .no-appointments {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+}
+
+/* TABLE */
+.appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.appointments-table th {
+  background-color: #0277bd;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.appointments-table td {
+  padding: 10px;
+  font-size: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.appointments-table tr:hover {
+  background-color: #f1f1f1;
+}
