@@ -1,0 +1,93 @@
+/* --- FEATURES SECTION --- */
+.features-section {
+  background: linear-gradient(180deg, #f9fbfd 0%, #eef3ff 100%);
+  padding: 80px 7vw;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.features-header {
+  margin-bottom: 50px;
+}
+
+.features-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #173f9f;
+  margin-bottom: 10px;
+}
+
+.features-subtitle {
+  font-size: 1.1rem;
+  color: #56627e;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Grid Layout */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* Card Styling */
+.feature-card {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(31, 77, 213, 0.08);
+  padding: 40px 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 36px rgba(31, 77, 213, 0.15);
+}
+
+/* Icon */
+.feature-icon {
+  font-size: 2.8rem;
+  color: #1f4fd5;
+  margin-bottom: 20px;
+  transition: color 0.3s;
+}
+
+.feature-card:hover .feature-icon {
+  color: #103a8b;
+}
+
+/* Title & Description */
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1746aa;
+  margin-bottom: 12px;
+}
+
+.feature-desc {
+  font-size: 0.98rem;
+  color: #444;
+  line-height: 1.6;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .features-title {
+    font-size: 2rem;
+  }
+
+  .feature-card {
+    padding: 32px 24px;
+  }
+
+  .feature-icon {
+    font-size: 2.2rem;
+  }
+}
